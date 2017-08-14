@@ -36,7 +36,7 @@ public class MainActivity
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
 
-      for (int i = 0; i < 15;)
+      for (int i = 0; i < 150;)
       {
         data.add(new DataBean("id__" + i++,"data1","data2","data3","data4","data5","data6","data7", "data8"));
       }
@@ -48,49 +48,8 @@ public class MainActivity
 
 	    RelativeLayout linearLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 	    linearLayout.addView(view);
-      //Add zoom control
-      final ZoomControls zoomControls = new ZoomControls(this);
-	    RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-		    RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-	    layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-	    layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-      zoomControls.setLayoutParams(layoutParams);
-
-      linearLayout.addView(zoomControls);
 
       final FixTableLayout fixTableLayout = (FixTableLayout) view.findViewById(R.id.fixTableLayout);
-
-	    zoomControls.setOnZoomInClickListener(new View.OnClickListener()
-	    {
-		    @Override
-		    public void onClick(View view)
-		    {
-			    float x = fixTableLayout.getScaleX();
-			    float y = fixTableLayout.getScaleY();
-			    fixTableLayout.setScaleX(x + 1);
-			    fixTableLayout.setScaleY(y + 1);
-			    fixTableLayout.setPivotX(0);
-			    fixTableLayout.setPivotY(0);
-
-		    }
-	    });
-	    zoomControls.setOnZoomOutClickListener(new View.OnClickListener()
-	    {
-		    @Override
-		    public void onClick(View view)
-		    {
-			    float x = fixTableLayout.getScaleX();
-			    float y = fixTableLayout.getScaleY();
-
-			    if( x > 1 )
-			    {
-				    fixTableLayout.setScaleX(x - 1);
-				    fixTableLayout.setScaleY(y - 1);
-				    fixTableLayout.setPivotX(0);
-				    fixTableLayout.setPivotY(0);
-			    }
-		    }
-	    });
 
       // 一定要设置Adapter 否则看不到TableLayout
       final FixTableAdapter fixTableAdapter = new FixTableAdapter(title,data);
