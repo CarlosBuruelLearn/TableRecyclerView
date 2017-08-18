@@ -527,12 +527,12 @@ public class FixTableLayout extends FrameLayout {
         invalidate();
     }
 
-    public static abstract interface ZoomViewListener
+    interface ZoomViewListener
     {
-        public abstract void onZoomStarted(float paramFloat1, float paramFloat2, float paramFloat3);
+        void onZoomStarted(float paramFloat1, float paramFloat2, float paramFloat3);
 
-        public abstract void onZooming(float paramFloat1, float paramFloat2, float paramFloat3);
+        void onZooming(float paramFloat1, float paramFloat2, float paramFloat3);
 
-        public abstract void onZoomEnded(float paramFloat1, float paramFloat2, float paramFloat3);
+        void onZoomEnded(float paramFloat1, float paramFloat2, float paramFloat3);
     }
 }

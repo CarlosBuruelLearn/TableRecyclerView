@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-import android.widget.ZoomControls;
 
 import com.app.feng.fixtablelayout.FixTableLayout;
 import com.app.feng.fixtablelayout.inter.ILoadMoreListener;
